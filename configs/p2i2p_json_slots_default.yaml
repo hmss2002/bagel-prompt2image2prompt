@@ -1,15 +1,15 @@
-# Default config for Experiment 2 (v2 prompt generation)
+# Default config for Prompt-to-Image-to-Prompt (v2 prompt generation)
 # This file is the primary config used by run_experiment2.sh when no --config is passed.
 
 # Model and output paths
 model_path: /home/ma-user/work/models/bagel_base/BAGEL-7B-MoT
-output_dir: /home/ma-user/work/code/bagel_experiment2/outputs
+output_dir: /home/ma-user/work/code/prompt2image2prompt-pipeline/outputs
 
 # Prompt generation mode and data
 prompt_mode: v2
-vocab_dir: /home/ma-user/work/code/bagel_experiment2/data/prompts/vocab
-bucket_config: /home/ma-user/work/code/bagel_experiment2/data/prompts/buckets.json
-template_file: /home/ma-user/work/code/bagel_experiment2/data/prompts/templates.json
+vocab_dir: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/vocab
+bucket_config: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/buckets.json
+template_file: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/templates.json
 
 # Prompt sampling
 num_prompts: 32

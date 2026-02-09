@@ -95,7 +95,7 @@ def write_report(path: str, rows: List[Dict[str, Any]], top_k: int, bottom_k: in
     ]
 
     with open(path, "w", encoding="utf-8") as f:
-        f.write("# Experiment 2 Report\n\n")
+        f.write("# Prompt-to-Image-to-Prompt Report\n\n")
         f.write(f"Sort key: {sort_key}\n\n")
 
         f.write("## Metrics Summary\n\n")

@@ -1,0 +1,52 @@
+# Heterogeneous baseline config for Prompt-to-Image-to-Prompt
+# T2I: SDXL Turbo (diffusers)
+# I2T: BLIP captioner (transformers)
+
+# Model and output paths
+model_path: /home/ma-user/work/models/bagel_base/BAGEL-7B-MoT
+output_dir: /home/ma-user/work/code/prompt2image2prompt-pipeline/outputs
+
+# Heterogeneous backends
+t2i_backend: sdxl_turbo
+i2t_backend: blip
+
+# Local model paths (offline)
+t2i_model_path: /home/ma-user/work/models/AI-ModelScope/sdxl-turbo
+i2t_model_path: /home/ma-user/work/models/AI-ModelScope/blip-image-captioning-large
+
+# Device preferences (fallback to cpu if unavailable)
+t2i_device: npu
+i2t_device: npu
+
+# Prompt generation mode and data
+prompt_mode: v2
+vocab_dir: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/vocab
+bucket_config: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/buckets.json
+template_file: /home/ma-user/work/code/prompt2image2prompt-pipeline/data/prompts/templates.json
+
+# Prompt sampling
+num_prompts: 32
+num_seeds: 2
+seed_base: 1234
+
+# Image size and diffusion steps (SDXL Turbo)
+image_w: 512
+image_h: 512
+steps: 8
+
+# Precision
+dtype: bf16
+
+# I2T prompt and decoding settings
+caption_prompt: ""
+max_new_tokens: 160
+batch_size: 1
+
+# Embedding model for scoring
+embedding_model_path: /home/ma-user/work/models/all-MiniLM-L6-v2
+offline_embeddings: true
+offline_models: true
+
+# Prompt generation control
+# When true, all style vocab lists are disabled during prompt generation.
+disable_styles: false
