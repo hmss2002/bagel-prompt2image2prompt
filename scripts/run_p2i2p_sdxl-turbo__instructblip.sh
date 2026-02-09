@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+# Wrapper for SDXL Turbo (T2I) + InstructBLIP (I2T).
+# Delegates to the shared SDXL Turbo hetero runner with a fixed config.
+
 ROOT_DIR="/home/ma-user/work/code/prompt2image2prompt-pipeline"
 CONFIG_PATH="${ROOT_DIR}/configs/p2i2p_sdxl-turbo__instructblip_smoke.yaml"
 WORLD_SIZE="${WORLD_SIZE:-4}"
