@@ -27,43 +27,46 @@ This project validates the reversibility of a Prompt -> Image -> Prompt pipeline
 ```
 /home/ma-user/work/code/prompt2image2prompt-pipeline/
   configs/
-    p2i2p_json_slots_default.yaml        # 默认配置 / default config
-    p2i2p_hetero_baseline.yaml            # 异源基线 / hetero baseline
-    p2i2p_hetero_instructblip_smoke.yaml  # InstructBLIP 冒烟 / smoke
-    p2i2p_turbo_instruct_smoke.yaml       # Turbo + InstructBLIP 冒烟 / smoke
+    p2i2p_bagel__bagel_default.yaml                 # BAGEL->BAGEL 默认配置
+    p2i2p_sdxl-turbo__blip.yaml                     # SDXL Turbo->BLIP
+    p2i2p_sdxl-turbo__instructblip_smoke.yaml       # SDXL Turbo->InstructBLIP (empty prompt)
+    p2i2p_sdxl-turbo__instructblip_guessprompt_smoke.yaml  # SDXL Turbo->InstructBLIP (guess-prompt)
   data/
     prompts/
-      buckets.json                        # 分桶配额 / bucket quotas
-      templates.json                      # 模板家族 / template family
-      vocab/                              # 词表 / vocab
+      buckets.json                                 # 分桶配额 / bucket quotas
+      templates.json                               # 模板家族 / template family
+      vocab/                                       # 词表 / vocab
         subjects/
         attributes/
         actions/
         scenes/
         styles/
         lighting/
-    slot_vocab/                           # 评估词表 / eval vocab
+    slot_vocab/                                    # 评估词表 / eval vocab
       subject.txt
       attribute.txt
       scene.txt
       style.txt
       synonyms.json
   legacy/
-    configs/                              # v1 配置 / v1 configs
-    data/prompts/                         # v1 prompts
-    scripts/                              # v1 scripts
+    configs/                                       # v1 配置 / v1 configs
+    data/prompts/                                  # v1 prompts
+    scripts/                                       # v1 scripts
   outputs/
-    p2i2p_run_YYYYMMDD_HHMMSS/
+    sdxl-turbo__blip_YYYYMMDD_HHMMSS/
+    sdxl-turbo__instructblip_YYYYMMDD_HHMMSS/
+    bagel__bagel_YYYYMMDD_HHMMSS/
   scripts/
-    make_prompts.py                       # v2 prompt 生成
+    make_prompts.py                                # v2 prompt 生成
     generate_images.py
     caption_images.py
     merge_results.py
     score_texts.py
     summarize.py
-    run_p2i2p.sh
-    run_p2i2p_hetero.sh
-    run_p2i2p_turbo_instruct.sh
+    run_p2i2p_bagel__bagel.sh
+    run_p2i2p_sdxl-turbo__i2t.sh
+    run_p2i2p_sdxl-turbo__blip.sh
+    run_p2i2p_sdxl-turbo__instructblip.sh
   README.md
 ```
 
@@ -86,7 +89,7 @@ BAGEL 推理代码：
 ## 4) 配置说明 / Config Notes
 
 默认配置：
-- [configs/p2i2p_json_slots_default.yaml](configs/p2i2p_json_slots_default.yaml)
+- [configs/p2i2p_bagel__bagel_default.yaml](configs/p2i2p_bagel__bagel_default.yaml)
 
 核心字段（含解释）：
 - `prompt_mode`: v2 (使用分桶+模板)
@@ -123,17 +126,31 @@ BAGEL 推理代码：
 5) `score_texts.py` 计算指标
 6) `summarize.py` 生成报告
 
-脚本入口（推荐）：
+BAGEL->BAGEL（默认）：
 ```
-bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p.sh \
-  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_json_slots_default.yaml \
+bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p_bagel__bagel.sh \
+  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_bagel__bagel_default.yaml \
   --nproc 4
 ```
 
-异源基线（Turbo + InstructBLIP）：
+SDXL Turbo->BLIP：
 ```
-bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p_turbo_instruct.sh \
-  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_turbo_instruct_smoke.yaml \
+bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p_sdxl-turbo__blip.sh \
+  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_sdxl-turbo__blip.yaml \
+  --nproc 4
+```
+
+SDXL Turbo->InstructBLIP（空指令）：
+```
+bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p_sdxl-turbo__instructblip.sh \
+  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_sdxl-turbo__instructblip_smoke.yaml \
+  --nproc 4
+```
+
+SDXL Turbo->InstructBLIP（Guess Prompt）：
+```
+bash /home/ma-user/work/code/prompt2image2prompt-pipeline/scripts/run_p2i2p_sdxl-turbo__i2t.sh \
+  --config /home/ma-user/work/code/prompt2image2prompt-pipeline/configs/p2i2p_sdxl-turbo__instructblip_guessprompt_smoke.yaml \
   --nproc 4
 ```
 
@@ -175,7 +192,7 @@ Q: 为什么进程被中断？
 - 通常是外部 SIGINT（例如 Ctrl+C 或平台自动终止）
 
 Q: 如何验证改动后仍有效？
-- 使用 `p2i2p_turbo_instruct_smoke.yaml` 跑 4 图冒烟
+- 使用 `p2i2p_sdxl-turbo__instructblip_smoke.yaml` 跑 4 图冒烟
 
 ---
 

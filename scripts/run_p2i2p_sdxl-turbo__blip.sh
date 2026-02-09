@@ -2,7 +2,7 @@
 set -euo pipefail
 
 ROOT_DIR="/home/ma-user/work/code/prompt2image2prompt-pipeline"
-CONFIG_PATH="${ROOT_DIR}/configs/p2i2p_turbo_instruct_smoke.yaml"
+CONFIG_PATH="${ROOT_DIR}/configs/p2i2p_sdxl-turbo__blip.yaml"
 WORLD_SIZE="${WORLD_SIZE:-4}"
 
 while [[ $# -gt 0 ]]; do
@@ -26,4 +26,4 @@ while [[ $# -gt 0 ]]; do
   esac
 done
 
-"${ROOT_DIR}/scripts/run_p2i2p_hetero.sh" --config "${CONFIG_PATH}" --nproc "${WORLD_SIZE}"
+"${ROOT_DIR}/scripts/run_p2i2p_sdxl-turbo__i2t.sh" --config "${CONFIG_PATH}" --nproc "${WORLD_SIZE}"

@@ -1,5 +1,5 @@
 # Default config for Prompt-to-Image-to-Prompt (v2 prompt generation)
-# This file is the primary config used by run_experiment2.sh when no --config is passed.
+# This file is the primary config used by run_p2i2p_bagel__bagel.sh when no --config is passed.
 
 # Model and output paths
 model_path: /home/ma-user/work/models/bagel_base/BAGEL-7B-MoT
