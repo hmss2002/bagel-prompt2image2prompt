@@ -1,0 +1,9 @@
+{
+  "photorealistic": ["realistic", "photo-realistic"],
+  "cinematic": ["movie still", "film still"],
+  "watercolor": ["water colour"],
+  "bokeh": ["blurred background"],
+  "street": ["street photography"],
+  "portrait": ["portrait photo"],
+  "35mm": ["35 mm", "film"]
+}

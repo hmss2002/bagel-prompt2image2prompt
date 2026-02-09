@@ -1,0 +1,29 @@
+model_path: /home/ma-user/work/models/bagel_base/BAGEL-7B-MoT
+output_dir: /home/ma-user/work/code/bagel_experiment2/outputs
+prompt_file: /home/ma-user/work/code/bagel_experiment2/legacy/data/prompts/baseline_prompts_legacy.txt
+template_file: /home/ma-user/work/code/bagel_experiment2/legacy/data/prompts/templates_legacy.json
+num_prompts: 32
+num_seeds: 2
+seed_base: 1234
+image_w: 1024
+image_h: 576
+steps: 50
+cfg_text_scale: 4.0
+cfg_img_scale: 1.0
+cfg_interval: 0.4,1.0
+timestep_shift: 3.0
+cfg_renorm_type: global
+cfg_renorm_min: 0.0
+dtype: bf16
+caption_prompt: 'You must reconstruct the original prompt in the same style as the
+  dataset. Output ONLY a single line, no extra text. Format (exact order, comma-separated
+  phrases): STYLE FORMAT of SUBJECT in SCENE, ATTRIBUTE, LIGHTING. Rules: Use short
+  phrases, not full sentences. Do not add details not in the image. Keep the wording
+  concise. If unsure, pick the closest phrase from the style/scene/attribute/lighting
+  vocabulary. Example: cinematic portrait of a firefighter in a rainy city street,
+  dramatic lighting, neon glow'
+max_new_tokens: 64
+batch_size: 1
+embedding_model_path: /home/ma-user/work/models/all-MiniLM-L6-v2
+offline_embeddings: true
+prompt_mode: v1

@@ -1,0 +1,757 @@
+{
+  "version": "v2",
+  "templates": [
+    {
+      "id": "person_s1",
+      "bucket": "person",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, portrait of {subject}, {attributes}"
+    },
+    {
+      "id": "person_s2",
+      "bucket": "person",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "person_m1",
+      "bucket": "person",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {action} in {scene}, {lighting}"
+    },
+    {
+      "id": "person_m2",
+      "bucket": "person",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "attributes",
+        "scene"
+      ],
+      "template": "{subject}, {attributes}, in {scene}"
+    },
+    {
+      "id": "person_c1",
+      "bucket": "person",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "action",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2}, {action}, in {scene}, {lighting}"
+    },
+    {
+      "id": "person_c2",
+      "bucket": "person",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style",
+        "lighting",
+        "attributes"
+      ],
+      "template": "{style}, {subject} {action}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "animal_s1",
+      "bucket": "animal",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "animal_s2",
+      "bucket": "animal",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "animal_m1",
+      "bucket": "animal",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {action} in {scene}, {lighting}"
+    },
+    {
+      "id": "animal_m2",
+      "bucket": "animal",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene"
+      ],
+      "template": "{subject} in {scene}"
+    },
+    {
+      "id": "animal_c1",
+      "bucket": "animal",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "action",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2}, {action}, in {scene}, {lighting}"
+    },
+    {
+      "id": "animal_c2",
+      "bucket": "animal",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style",
+        "attributes",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {action}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "vehicle_s1",
+      "bucket": "vehicle",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "vehicle_s2",
+      "bucket": "vehicle",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "vehicle_m1",
+      "bucket": "vehicle",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "lighting"
+      ],
+      "template": "{subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "vehicle_m2",
+      "bucket": "vehicle",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} {action} in {scene}"
+    },
+    {
+      "id": "vehicle_c1",
+      "bucket": "vehicle",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "vehicle_c2",
+      "bucket": "vehicle",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style",
+        "attributes",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {action}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "arch_s1",
+      "bucket": "architecture",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "arch_s2",
+      "bucket": "architecture",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "arch_m1",
+      "bucket": "architecture",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "lighting"
+      ],
+      "template": "{subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "arch_m2",
+      "bucket": "architecture",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "arch_c1",
+      "bucket": "architecture",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "scene",
+        "style",
+        "lighting",
+        "attributes"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}, {attributes}"
+    },
+    {
+      "id": "arch_c2",
+      "bucket": "architecture",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "object_s1",
+      "bucket": "indoor_object",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "object_s2",
+      "bucket": "indoor_object",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "object_m1",
+      "bucket": "indoor_object",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "attributes",
+        "scene",
+        "lighting"
+      ],
+      "template": "{subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "object_m2",
+      "bucket": "indoor_object",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene"
+      ],
+      "template": "{subject} in {scene}"
+    },
+    {
+      "id": "object_c1",
+      "bucket": "indoor_object",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "object_c2",
+      "bucket": "indoor_object",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "attributes",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "food_s1",
+      "bucket": "food",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "food_s2",
+      "bucket": "food",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "food_m1",
+      "bucket": "food",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "attributes",
+        "lighting"
+      ],
+      "template": "{subject}, {attributes}, {lighting}"
+    },
+    {
+      "id": "food_m2",
+      "bucket": "food",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "food_c1",
+      "bucket": "food",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "food_c2",
+      "bucket": "food",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "attributes",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "nature_s1",
+      "bucket": "nature",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "nature_s2",
+      "bucket": "nature",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "attributes",
+        "style"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "nature_m1",
+      "bucket": "nature",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "lighting"
+      ],
+      "template": "{subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "nature_m2",
+      "bucket": "nature",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "nature_c1",
+      "bucket": "nature",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "nature_c2",
+      "bucket": "nature",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "attributes",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "abstract_s1",
+      "bucket": "abstract",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "style",
+        "attributes"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "abstract_s2",
+      "bucket": "abstract",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "style"
+      ],
+      "template": "{style}, {subject}"
+    },
+    {
+      "id": "abstract_m1",
+      "bucket": "abstract",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "color"
+      ],
+      "template": "{style}, {subject}, {color}"
+    },
+    {
+      "id": "abstract_m2",
+      "bucket": "abstract",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {lighting}"
+    },
+    {
+      "id": "abstract_c1",
+      "bucket": "abstract",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "style",
+        "color"
+      ],
+      "template": "{style}, {subject}, {color}"
+    },
+    {
+      "id": "abstract_c2",
+      "bucket": "abstract",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "style",
+        "attributes",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, {lighting}"
+    },
+    {
+      "id": "rare_s1",
+      "bucket": "rare",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "style",
+        "scene"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "rare_s2",
+      "bucket": "rare",
+      "complexity": "simple",
+      "slots": [
+        "subject",
+        "style",
+        "attributes"
+      ],
+      "template": "{style}, {subject}, {attributes}"
+    },
+    {
+      "id": "rare_m1",
+      "bucket": "rare",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "attributes",
+        "scene",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "rare_m2",
+      "bucket": "rare",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "scene"
+      ],
+      "template": "{style}, {subject} in {scene}"
+    },
+    {
+      "id": "rare_c1",
+      "bucket": "rare",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "subject2",
+        "relation",
+        "style",
+        "scene",
+        "lighting"
+      ],
+      "template": "{style}, {subject} {relation} {subject2} in {scene}, {lighting}"
+    },
+    {
+      "id": "rare_c2",
+      "bucket": "rare",
+      "complexity": "complex",
+      "slots": [
+        "subject",
+        "style",
+        "attributes",
+        "scene",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {attributes}, in {scene}, {lighting}"
+    },
+    {
+      "id": "person_m3",
+      "bucket": "person",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "animal_m3",
+      "bucket": "animal",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "action",
+        "scene",
+        "style"
+      ],
+      "template": "{style}, {subject} {action} in {scene}"
+    },
+    {
+      "id": "vehicle_m3",
+      "bucket": "vehicle",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "arch_m3",
+      "bucket": "architecture",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "object_m3",
+      "bucket": "indoor_object",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "attributes",
+        "lighting"
+      ],
+      "template": "{subject}, {attributes}, {lighting}"
+    },
+    {
+      "id": "food_m3",
+      "bucket": "food",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "lighting",
+        "style"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "nature_m3",
+      "bucket": "nature",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "scene",
+        "style",
+        "lighting"
+      ],
+      "template": "{style}, {subject} in {scene}, {lighting}"
+    },
+    {
+      "id": "abstract_m3",
+      "bucket": "abstract",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "color",
+        "lighting"
+      ],
+      "template": "{style}, {subject}, {color}, {lighting}"
+    },
+    {
+      "id": "rare_m3",
+      "bucket": "rare",
+      "complexity": "medium",
+      "slots": [
+        "subject",
+        "style",
+        "scene",
+        "attributes"
+      ],
+      "template": "{style}, {subject} in {scene}, {attributes}"
+    }
+  ]
+}

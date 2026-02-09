@@ -1,0 +1,21 @@
+# Outputs and logs
+outputs/
+outputs||/
+**/logs/
+
+# Model checkpoints
+models/
+**/*.pt
+**/*.pth
+**/*.ckpt
+
+# Python cache
+**/__pycache__/
+**/*.pyc
+
+# Notebook cache
+.ipynb_checkpoints/
+
+# Large datasets (generated)
+data/identity_*/
+**/images/

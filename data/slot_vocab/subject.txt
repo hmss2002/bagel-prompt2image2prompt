@@ -1,0 +1,11 @@
+girl
+boy
+woman
+man
+firefighter
+robot
+cat
+dog
+cyclist
+dancer
+barista

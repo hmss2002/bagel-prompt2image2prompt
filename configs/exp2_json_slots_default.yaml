@@ -1,0 +1,48 @@
+# Default config for Experiment 2 (v2 prompt generation)
+# This file is the primary config used by run_experiment2.sh when no --config is passed.
+
+# Model and output paths
+model_path: /home/ma-user/work/models/bagel_base/BAGEL-7B-MoT
+output_dir: /home/ma-user/work/code/bagel_experiment2/outputs
+
+# Prompt generation mode and data
+prompt_mode: v2
+vocab_dir: /home/ma-user/work/code/bagel_experiment2/data/prompts/vocab
+bucket_config: /home/ma-user/work/code/bagel_experiment2/data/prompts/buckets.json
+template_file: /home/ma-user/work/code/bagel_experiment2/data/prompts/templates.json
+
+# Prompt sampling
+num_prompts: 32
+num_seeds: 2
+seed_base: 1234
+
+# Image size and diffusion steps
+image_w: 768
+image_h: 768
+steps: 30
+
+# Classifier-free guidance settings
+cfg_text_scale: 4.0
+cfg_img_scale: 1.0
+cfg_interval: "0.4,1.0"
+
+# Sampler and renormalization
+timestep_shift: 3.0
+cfg_renorm_type: global
+cfg_renorm_min: 0.0
+
+# Precision
+dtype: bf16
+
+# I2T prompt and decoding settings
+caption_prompt: 'Guess the original prompt used to create this image. Do not start with "Create an image of" or any sentence. You may consider the image''s subject(s), style(s), scene(s), lighting, attributes, and actions; if a person appears, you may also include their profession or role when evident.'
+max_new_tokens: 160
+batch_size: 1
+
+# Embedding model for scoring
+embedding_model_path: /home/ma-user/work/models/all-MiniLM-L6-v2
+offline_embeddings: true
+
+# Prompt generation control
+# When true, all style vocab lists are disabled during prompt generation.
+disable_styles: false

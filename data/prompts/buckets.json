@@ -1,0 +1,14 @@
+{
+  "version": "v2",
+  "buckets": [
+    {"name": "person", "weight": 2.0, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "animal", "weight": 1.5, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "vehicle", "weight": 1.2, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "architecture", "weight": 1.2, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "indoor_object", "weight": 1.2, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "food", "weight": 1.0, "complexity": {"simple": 0.4, "medium": 0.4, "complex": 0.2}},
+    {"name": "nature", "weight": 1.2, "complexity": {"simple": 0.3, "medium": 0.5, "complex": 0.2}},
+    {"name": "abstract", "weight": 0.6, "complexity": {"simple": 0.4, "medium": 0.4, "complex": 0.2}},
+    {"name": "rare", "weight": 0.4, "complexity": {"simple": 0.2, "medium": 0.4, "complex": 0.4}}
+  ]
+}
